@@ -50,6 +50,9 @@ function Form({ addItem }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (!description) {
+      return;
+    }
     const newItem = {
       description,
       quantity: numItem,
