@@ -36,12 +36,18 @@ export default function PackagingList({
         ))}
       </ul>
       <div className="actions">
-        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-          <option value="input">sort By input value</option>
-          <option value="description">sort By description</option>
-          <option value="Packed Item">sort By Packed Item</option>
-        </select>
-        <button onClick={() => onClearList()}>Clear List</button>
+        {setItem.length ? (
+          <>
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+              <option value="input">sort By input value</option>
+              <option value="description">sort By description</option>
+              <option value="Packed Item">sort By Packed Item</option>
+            </select>
+            <button onClick={() => onClearList()}>Clear List</button>
+          </>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
