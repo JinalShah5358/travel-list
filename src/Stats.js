@@ -1,5 +1,4 @@
 export default function Stats({ items }) {
-  console.log(!items.length);
   if (!items.length) {
     return (
       <footer className="stats">
@@ -10,7 +9,7 @@ export default function Stats({ items }) {
   const numItems = items.length;
   const packedItem = items.filter((item) => item.packed).length;
   const percentage = Math.round((packedItem / numItems) * 100);
-  console.log(packedItem);
+
   return (
     <footer className="stats">
       <em>

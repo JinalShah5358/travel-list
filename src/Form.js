@@ -16,7 +16,6 @@ export default function Form({ addItem }) {
       id: Date.now(),
     };
     addItem(newItem);
-    console.log(newItem);
 
     setNumItem(1);
     setDescription("");
@@ -29,7 +28,6 @@ export default function Form({ addItem }) {
         value={numItem}
         onChange={(e) => {
           setNumItem(Number(e.target.value));
-          console.log(e.target.value);
         }}
       >
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
@@ -44,7 +42,6 @@ export default function Form({ addItem }) {
         value={description}
         onChange={(e) => {
           setDescription(e.target.value);
-          console.log(e.target.value);
         }}
       />
       <button>Add</button>
